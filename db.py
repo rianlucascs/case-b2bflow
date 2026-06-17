@@ -64,6 +64,8 @@ class Database:
             return df
         
         except Exception as e:
+            
             self.log.error(f"Erro ao selecionar dados: {e}")
+            
             raise    
 
