@@ -23,6 +23,9 @@ class Database:
             
             self.engine = create_engine(os.environ["DATABASE_URL"])
             
+            with self.engine.connect():  # força a conexão real
+                pass
+        
         except Exception as e:
             
             self.log.error(f"Erro ao conectar ao banco: {e}")
@@ -55,7 +58,7 @@ class Database:
         try:
             
             query = f'SELECT * FROM "Leads" LIMIT {limit}'
-            self.log.debug("Query: %s", query)
+            self.log.debug(f"Query: {query}")
             
             df = self.query(query)
 
