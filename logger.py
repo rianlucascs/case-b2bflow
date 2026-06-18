@@ -1,8 +1,11 @@
 import logging
 import os
-from logging.handlers import RotatingFileHandler
 
 LOG_FILE = os.path.join(os.path.dirname(__file__), "app.log")
+
+def reset_log() -> None:
+    """Apaga o conteúdo do arquivo de log. Chamar uma vez no início do main."""
+    open(LOG_FILE, "w").close()
 
 def get_logger(name: str) -> logging.Logger:
     logger = logging.getLogger(name)
@@ -17,8 +20,8 @@ def get_logger(name: str) -> logging.Logger:
         datefmt="%Y-%m-%d %H:%M:%S"
     )
 
-    # Arquivo — rotaciona a cada 5 MB, mantém 3 backups
-    file_handler = RotatingFileHandler(LOG_FILE, maxBytes=5 * 1024 * 1024, backupCount=3, encoding="utf-8")
+    # Arquivo — mode 'a' para acumular durante a execução
+    file_handler = logging.FileHandler(LOG_FILE, mode="a", encoding="utf-8")
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(formatter)
 
