@@ -1,0 +1,6 @@
+2026-06-18 00:13:25 | INFO     | db | Conexão com o banco estabelecida
+2026-06-18 00:13:25 | INFO     | whatsapp | Cliente Twilio inicializado com sucesso
+2026-06-18 00:13:25 | DEBUG    | db | Query: SELECT * FROM "Leads" LIMIT 1
+2026-06-18 00:13:26 | DEBUG    | db | Query executada com sucesso:SELECT * FROM "Leads" LIMIT 1
+2026-06-18 00:13:26 | INFO     | db | Selecionados 1 registros da tabela 'Leads'
+2026-06-18 00:13:26 | INFO     | whatsapp | Mensagem enviada para 61999450747 | SID: SM25c3057da623862c869384e1f2bb74ef | Status: queued
