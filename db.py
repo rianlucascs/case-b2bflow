@@ -23,7 +23,7 @@ class Database:
             
             self.engine = create_engine(os.environ["DATABASE_URL"])
             
-            with self.engine.connect():  # força a conexão real
+            with self.engine.connect():
                 pass
         
         except Exception as e:
