@@ -15,6 +15,7 @@ class WhatsApp:
         load_dotenv()
         self.load()
 
+
     def load(self) -> None:
         
         try:
@@ -27,6 +28,7 @@ class WhatsApp:
             self.log.error(f"Erro ao inicializar o cliente Twilio: {e}")
             
             raise
+
             
     def send_text(self, to: str, message: str):
         
