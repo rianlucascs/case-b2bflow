@@ -28,6 +28,8 @@ class WhatsApp:
             self.log.error(f"Erro ao inicializar o cliente Twilio: {e}")
             
             raise
+        
+        self.log.info("Cliente Twilio inicializado com sucesso")
 
             
     def send_text(self, to: str, message: str):
